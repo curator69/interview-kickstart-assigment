@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.required {
+  position: relative;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.required::after {
+  content: "*";
+  position: absolute;
+  color: red;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.MuiDialog-paperWidthSm {
+  width: 100%;
+  max-width: 80vw;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.MuiInputLabel-root {
+  /* inset: 0 !important; */
+  top: -5px !important;
+  color: #baaab1;
+}
+
+.MuiOutlinedInput-root {
+  height: 40px;
+}
+
+.MuiOutlinedInput-root input {
+  padding: 0;
 }
